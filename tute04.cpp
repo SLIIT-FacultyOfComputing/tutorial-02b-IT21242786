@@ -13,17 +13,48 @@ Do not modify the main function.*/
 
 #include <iostream>
 
-long Factorial(int no);
-long nCr(int n, int r);
+
+
 
 int main() {
-  int n, r;
+  long long Factorial=1,numerator,denominator;
+  int n, r,i=1,comb,sub;
   std::cout << "Enter a value for n ";
   std::cin >> n;
   std::cout << "Enter a value for r ";
   std::cin >> r;
-  std::cout << "nCr = ";
-  std::cout << nCr(n,r);
-  std::cout << std::endl;
+
+  while(i<n)
+  {
+    Factorial=i*Factorial;
+    i++;
+  }
+  numerator=Factorial;
+  sub=n-r;
+  Factorial=1;
+  i=1;
+  while(i<=sub)
+  {
+    Factorial=i*Factorial;
+    i++;
+  }
+  denominator=Factorial;
+  Factorial=1;
+  i=1;
+  while(i<=r)
+  {
+    Factorial=i*Factorial;
+    i++;
+  }
+  denominator=(Factorial*denominator);
+  comb=numerator/denominator;
+  std::cout<<"\nCombination(nCr)="<<comb;
+  
+  
+  
+
   return 0;
+  
+
+  
 }

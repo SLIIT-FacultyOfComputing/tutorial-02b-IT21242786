@@ -10,14 +10,14 @@ int main()
     int no;
     long fac;
 
-    printf("Enter a Number : ");
-    scanf("%d", &no);
+    std::cout<<"Enter a Number : ";
+    std::cin>> no;
 
     fac = 1;
     for (int r=no; r >= 1; r--) {
         fac = fac * r;
     }
 
-    printf("Factorial of %d is %ld\n", no, fac);  
+    std::cout<<"Factorial of  "<< no<<"is" <<fac<<std::endl;  
     return 0;
 }
